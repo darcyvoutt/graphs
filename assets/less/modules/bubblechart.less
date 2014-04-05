@@ -1,0 +1,47 @@
+/* Bubble Chart */
+.chart {
+  border-radius: 3px;
+  border: 2px solid fade(@borders, 45%);  
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  
+  &-bubble {
+    overflow: hidden;
+    background-color: @primary;    
+    .transition(all 1s ease-out);
+    position: absolute;
+    border-radius: 100%;
+    cursor: pointer;
+    display: block;
+    min-height: 10px;  
+    min-width: 10px;
+    z-index: 999;
+    bottom: 0;
+    left: 0;
+    
+    &:hover {
+      .transition(all 0.5s ease);
+      background: #428D92;
+    }
+    
+    &:after {
+      position: absolute;
+      content: attr(data-label);
+      display: none;
+      width: 100%;
+      height: 100%;
+      
+      text-align: center;
+      padding-top: 50%;
+      line-height: 1px;
+      font-size: 15px;
+      color: #fff;
+    }
+    
+    &:hover:after {
+      display: block;
+    }
+  }
+}
