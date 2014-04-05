@@ -1,74 +1,87 @@
 .barGraph {
   position: relative;
+  overflow: hidden;
   width: inherit;
   height: auto;
-}
 
-.graph {
-  @indent: 4%;
-  position: relative;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  width: calc(100% - @indent);
-  left: @indent;
-  
-  &-barBack {
-    border-radius: 2px;
-    background: #DAE4EB;
-    margin-bottom: 10px;
-    display: block;
-  }
-  
+  @radius: 3px;
+
   &-bar {
-    background-color: @primary;    
-    .transition(all 1s ease-out);
-    border-radius: 2px;
-    cursor: pointer;
-    margin-bottom: 10px;
     position: relative;
-    z-index: 9999;
+    border-radius: @radius;
+    background: @barBack;
+    margin-bottom: 10px;
+    height: @barHeight;
+    overflow: hidden;
     display: block;
-    height: 20px;  
-    width: 0%;
-    
-    &:hover {
-      .transition(all 0.5s ease);
-      background: #428D92;
+
+    span {
+      background: rgba(0,0,0,0.5);
+      line-height: @barHeight;
+      height: @barHeight;     
+      border-top-right-radius: @radius;
+      border-bottom-right-radius: @radius;
+      margin-left: 5px;
+      padding: 0 10px 0 15px;
+      font-size: 12px;
+      color: #fff;
+      
+      position: absolute;
+      display: none;
+      z-index: 9999;
+      right: 0;
+      top: 0;      
     }
-    
+
+    &:hover > span {
+      display: block;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
+
+    &:hover { cursor: pointer; }
     
-    &:after {
-      position: absolute;
-      content: attr(data-value);
-      display: none;
-      
-      font-size: 12px;
-      border-radius: 4px;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      
+    &:hover > svg line {
+      .transition(all 0.5s ease);      
+      stroke: @hover;
+      fill: @hover;
+    }    
+  }
+
+  line {    
+    .transition(all 0.5s ease);
+    stroke-width: @barHeight * 2;
+    stroke-linejoin: round;
+    stroke: @primary;
+    fill: @primary;    
+  }
+
+  &-legend {    
+    list-style-type: none;
+    min-width: 40px; 
+    display: block;
+    float: left;
+    padding: 0;
+    margin: 0;
+    width: 5%;
+
+    &-item {
       line-height: @barHeight;
-      height: @barHeight; 
-      padding: 0 10px;
-      
-      margin-left: 5px;
-      left: 100%;
-      top: 0;
-    }
-    
-    &:hover:after {
-      display: block;
+      margin-bottom: 10px;
+
+      &:last-child { margin-bottom: 0; }
     }
   }
-  
-  &-legend {
-    position: absolute;
-    margin-right: 10px;
-    left: -40px ;
-    z-index: 9999;
+
+  &-graph {
+    display: block;
+    float: left;
+    width: 94%;
+
+    .tabletPortrait({ width: 92%; });
+    .mobileLandscape({ width: 87%; });
+    .mobilePortrait({ width: 84%; });
   }
 }

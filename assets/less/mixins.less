@@ -3,6 +3,7 @@
 @borders: #717D95;
 @primary: #59BAC0;
 @hover: #428D92;
+@barBack: #DAE4EB;
 
 .transition (@property) {
   -webkit-transition: @property;
@@ -31,3 +32,22 @@
     clear: both; 
   }
 }
+
+//////////////////////////////////////////////////////
+// Mixins for @media queries
+//////////////////////////////////////////////////////
+
+.tabletPortrait(@rules) {
+  @media screen and (max-width: 768px) { @rules(); }
+  // Based on iPad portrait · width: 768px
+} // Use: .tabletPortrait({ .. }); 
+
+.mobileLandscape(@rules) {
+  @media screen and (max-width: 600px) { @rules(); }
+  // Based on Android (Nexus 4) landscape · width: 600px
+} // Use: .mobileLandscape({ .. });
+
+.mobilePortrait(@rules) {
+  @media screen and (max-width: 320px) { @rules(); }
+  // Based on iPhone 3+4 portrait · width: 320px
+} // Use: .mobilePortrait({ .. });

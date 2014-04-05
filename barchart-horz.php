@@ -1,38 +1,42 @@
 <div class="graphWidget">
+
   <h2>Horzintal Bar Chart</h2>
+
   <div class="barGraph">
-    <ul class="graph">
-      <span class="graph-barBack">
-        <li class="graph-bar" data-value="28.5">
-          <span class="graph-legend">Mon</span>
-        </li>
-      </span>  
 
-      <span class="graph-barBack">    
-        <li class="graph-bar" data-value="85">
-          <span class="graph-legend">Tue</span>
-        </li>
-      </span>
-
-      <span class="graph-barBack">    
-        <li class="graph-bar" data-value="70">
-          <span class="graph-legend">Wed</span>
-        </li>
-      </span>
-
-      <span class="graph-barBack">    
-        <li class="graph-bar" data-value="50">
-          <span class="graph-legend">Thu</span>
-        </li>
-      </span>
-
-      <span class="graph-barBack">    
-        <li class="graph-bar" data-value="68">
-          <span class="graph-legend">Fri</span>
-        </li>
-      </span>      
+    <ul class="barGraph-legend">
+      <li class="barGraph-legend-item">Mon</li>
+      <li class="barGraph-legend-item">Tue</li>
+      <li class="barGraph-legend-item">Wed</li>
+      <li class="barGraph-legend-item">Thu</li>
+      <li class="barGraph-legend-item">Fri</li>
     </ul>
+
+    <div class="barGraph-graph">
+
+      <div class="barGraph-bar">
+        <svg><line x1="0%" y1="0%" x2="28.5%" y2="0%" /></svg>
+        <span class="barGraph-tooltip">80%</span>
+      </div>
+      <div class="barGraph-bar">
+        <svg><line x1="0%" y1="0%" x2="85%" y2="0%" /></svg>
+        <span class="barGraph-tooltip">40%</span>
+      </div>
+      <div class="barGraph-bar">
+        <svg><line x1="0%" y1="0%" x2="70%" y2="0%" /></svg>
+        <span class="barGraph-tooltip">40%</span>
+      </div>
+      <div class="barGraph-bar">
+        <svg><line x1="0%" y1="0%" x2="50%" y2="0%" /></svg>
+        <span class="barGraph-tooltip">40%</span>
+      </div>
+      <div class="barGraph-bar">
+        <svg><line x1="0%" y1="0%" x2="68%" y2="0%" /></svg>
+        <span class="barGraph-tooltip">40%</span>
+      </div>
+
+    </div>    
+
   </div>
 
-  <script src="assets/js/barcharts.js"></script>
 </div>  

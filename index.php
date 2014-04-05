@@ -1,9 +1,12 @@
 <?php include('header.php'); ?>
 
-<!-- Testing Line Chart -->
+<!-- Bar Chart -->
+<?php include('barchart-horz.php'); ?>
+
+<!-- Line Chart -->
 <?php include('linechart.php'); ?>
 
-<!-- Testing Bubble Chart -->
+<!-- Bubble Chart -->
 <?php include('bubblechart.php'); ?>
 
 
