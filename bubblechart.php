@@ -1,9 +1,12 @@
-<h2>Bubble Chart</h2>
-<div class="chart">    
-  <div data-value="7" data-label="500" data-x="50" data-y="50" class="chart-bubble"></div>
-  <div data-value="10" data-label="1000"  data-x="10" data-y="60" class="chart-bubble"></div>
-  
-  <?php include('graph.php'); ?>
-</div>  
+<div class="graphWidget">
+  <h2>Bubble Chart</h2>
+  <div class="chart">    
+    
+    <svg>
+      <circle cx="50%" cy="50%" r="70" />        
+      <circle cx="10%" cy="60%" r="100" />    
+    </svg>
 
-<script src="assets/js/bubblechart.js"></script>
+  <?php include('graphlines.php'); ?>
+  </div>  
+</div>

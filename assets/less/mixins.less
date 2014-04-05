@@ -2,6 +2,7 @@
 @barHeight: 20px;
 @borders: #717D95;
 @primary: #59BAC0;
+@hover: #428D92;
 
 .transition (@property) {
   -webkit-transition: @property;
@@ -11,16 +12,22 @@
 }
 
 .transform(@degree) {
-  transform:rotate(@degree);
-  -ms-transform:rotate(@degree);
   -webkit-transform:rotate(@degree); 
+  -ms-transform:rotate(@degree);
+  transform:rotate(@degree);
 }
 
-.clearfix,
-.clearfix:before,
-.clearfix:after {
-   display: block;
-   content: " ";   
-   clear: both;
-   zoom: 1;
+.clearfix {
+  zoom: 1;
+  
+  &:before { 
+    content: ''; 
+    display: block; 
+  }
+  
+  &:after { 
+    content: ''; 
+    display: table; 
+    clear: both; 
+  }
 }
