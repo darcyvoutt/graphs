@@ -76,10 +76,17 @@
 
   line {    
     stroke-width: @barHeight * 2;
-    stroke-linejoin: round;
+    stroke-linejoin: round;    
     stroke: @primary;
+    cursor: pointer;
     fill: @primary;
     bottom: 0;
+
+    &:hover {
+      .transition(all 0.2s ease);      
+      stroke: @hover;
+      fill: @hover;
+    }
   }
 
   &-yaxis {

@@ -46,10 +46,10 @@ $x4 = "1994";
       <?php include('graphlines.php'); ?> 
 
       <ol class="barChart-vert-xaxis">
-        <li class="barChart-vert-xaxis-item"><?php echo $x5 ?></li>
-        <li class="barChart-vert-xaxis-item"><?php echo $x4 ?></li>
-        <li class="barChart-vert-xaxis-item"><?php echo $x3 ?></li>
+        <li class="barChart-vert-xaxis-item"><?php echo $x1 ?></li>
         <li class="barChart-vert-xaxis-item"><?php echo $x2 ?></li>
+        <li class="barChart-vert-xaxis-item"><?php echo $x3 ?></li>
+        <li class="barChart-vert-xaxis-item"><?php echo $x4 ?></li>
       </ol>
       
     </div>
