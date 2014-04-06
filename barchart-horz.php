@@ -35,18 +35,22 @@ $value5 = "46%";
         <svg><line x1="0%" y1="0%" x2="<?php echo $value1 ?>" y2="0%" /></svg>
         <span class="barGraph-tooltip"><?php echo $value1 ?></span>
       </div>
+
       <div class="barGraph-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value2 ?>" y2="0%" /></svg>
         <span class="barGraph-tooltip"><?php echo $value2 ?></span>
       </div>
+      
       <div class="barGraph-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value3 ?>" y2="0%" /></svg>
         <span class="barGraph-tooltip"><?php echo $value3 ?></span>
       </div>
+      
       <div class="barGraph-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value4 ?>" y2="0%" /></svg>
         <span class="barGraph-tooltip"><?php echo $value4 ?></span>
       </div>
+      
       <div class="barGraph-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value5 ?>" y2="0%" /></svg>
         <span class="barGraph-tooltip"><?php echo $value5 ?></span>
