@@ -16,43 +16,43 @@ $value5 = "46%";
 
 <div class="graphWidget">
 
-  <h2>Horzintal Bar Chart</h2>
+  <h2>Horzintal Bar Chart | Horizontal</h2>
 
-  <div class="barGraph">
+  <div class="barChart">
 
-    <ul class="barGraph-legend">
-      <li class="barGraph-legend-item"><?php echo $legend1 ?></li>
-      <li class="barGraph-legend-item"><?php echo $legend2 ?></li>
-      <li class="barGraph-legend-item"><?php echo $legend3 ?></li>
-      <li class="barGraph-legend-item"><?php echo $legend4 ?></li>
-      <li class="barGraph-legend-item"><?php echo $legend5 ?></li>
+    <ul class="barChart-legend">
+      <li class="barChart-legend-item"><?php echo $legend1 ?></li>
+      <li class="barChart-legend-item"><?php echo $legend2 ?></li>
+      <li class="barChart-legend-item"><?php echo $legend3 ?></li>
+      <li class="barChart-legend-item"><?php echo $legend4 ?></li>
+      <li class="barChart-legend-item"><?php echo $legend5 ?></li>
     </ul>
 
-    <div class="barGraph-graph">
+    <div class="barChart-graph">
 
-      <div class="barGraph-bar">
+      <div class="barChart-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value1 ?>" y2="0%" /></svg>
-        <span class="barGraph-tooltip"><?php echo $value1 ?></span>
+        <span class="barChart-tooltip"><?php echo $value1 ?></span>
       </div>
 
-      <div class="barGraph-bar">
+      <div class="barChart-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value2 ?>" y2="0%" /></svg>
-        <span class="barGraph-tooltip"><?php echo $value2 ?></span>
+        <span class="barChart-tooltip"><?php echo $value2 ?></span>
       </div>
       
-      <div class="barGraph-bar">
+      <div class="barChart-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value3 ?>" y2="0%" /></svg>
-        <span class="barGraph-tooltip"><?php echo $value3 ?></span>
+        <span class="barChart-tooltip"><?php echo $value3 ?></span>
       </div>
       
-      <div class="barGraph-bar">
+      <div class="barChart-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value4 ?>" y2="0%" /></svg>
-        <span class="barGraph-tooltip"><?php echo $value4 ?></span>
+        <span class="barChart-tooltip"><?php echo $value4 ?></span>
       </div>
       
-      <div class="barGraph-bar">
+      <div class="barChart-bar">
         <svg><line x1="0%" y1="0%" x2="<?php echo $value5 ?>" y2="0%" /></svg>
-        <span class="barGraph-tooltip"><?php echo $value5 ?></span>
+        <span class="barChart-tooltip"><?php echo $value5 ?></span>
       </div>
 
     </div>    

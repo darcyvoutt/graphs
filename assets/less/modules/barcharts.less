@@ -1,5 +1,8 @@
-.barGraph {
-  @radius: 3px;
+//////////////////////////////////////////////////////
+// Horizontal Bar Chart
+//////////////////////////////////////////////////////
+
+.barChart {  
   position: relative;
   overflow: hidden;
   width: inherit;
@@ -60,5 +63,45 @@
 
   &-graph {
     .graph();
+  }
+}
+
+//////////////////////////////////////////////////////
+// Vertical Bar Chart
+//////////////////////////////////////////////////////
+
+.barChart-vert {
+  position: relative;
+  width: inherit;
+
+  line {    
+    stroke-width: @barHeight * 2;
+    stroke-linejoin: round;
+    stroke: @primary;
+    fill: @primary;
+    bottom: 0;
+  }
+
+  &-yaxis {
+    .legend();
+    height: @chartHeight;
+
+    &-item {
+      .legend-item();
+      height: 20%;
+    }
+  }
+
+  &-graph {
+    .graph-lines();
+    height: @chartHeight;
+  }
+
+  &-xaxis {
+    .xaxis();
+
+    &-item {
+      .xaxis-item();
+    }
   }
 }

@@ -1,6 +1,9 @@
 <?php include('header.php'); ?>
 
-<!-- Bar Chart -->
+<!-- Bar Chart | Vertical -->
+<?php include('barchart-vert.php'); ?>
+
+<!-- Bar Chart | Horizontal -->
 <?php include('barchart-horz.php'); ?>
 
 <!-- Line Chart -->
