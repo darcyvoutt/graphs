@@ -27,19 +27,15 @@
       color: #fff;
       
       position: absolute;
-      display: none;
+      // display: none;
       z-index: 9999;
       right: 0;
       top: 0;      
     }
 
-    &:hover > span {
-      display: block;
-    }
+    // &:hover > span { display: block; }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    &:last-child { margin-bottom: 0; }
 
     &:hover { cursor: pointer; }
     
@@ -61,11 +57,17 @@
   &-legend {    
     list-style-type: none;
     min-width: 40px; 
-    display: block;
+    font-size: 14px;
+    display: block;    
     float: left;
     padding: 0;
     margin: 0;
-    width: 5%;
+    width: 6%;
+
+    .tabletPortrait({ 
+      min-width: 40px; 
+      font-size: 12px;
+      });
 
     &-item {
       line-height: @barHeight;
@@ -80,8 +82,8 @@
     float: left;
     width: 94%;
 
-    .tabletPortrait({ width: 92%; });
-    .mobileLandscape({ width: 87%; });
-    .mobilePortrait({ width: 84%; });
+    .tabletPortrait({ width: 90%; });
+    .mobileLandscape({ width: 85%; });
+    .mobilePortrait({ width: 82%; });
   }
 }
