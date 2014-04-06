@@ -1,12 +1,15 @@
 .graphWidget {
-  margin-bottom: 40px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;  
   position: relative;
+  overflow: hidden;
   display: block;
   height: auto;
   width: 100%;  
 
   &-lines {
     @bars: fade(@borders, 40%);
+    position: absolute;
     height: 100%;
     width: 100%;
     z-index: 0;

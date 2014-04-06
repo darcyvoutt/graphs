@@ -1,10 +1,5 @@
 .bubbleChart {
-  border-radius: 3px;
-  border: 2px solid fade(@borders, 45%);  
-  position: relative;
-  overflow: hidden;
-  width: inherit;
-  height: 500px;
+  @chartHeight: 500px;
 
   circle {
     .transition(all 0.5s ease);
@@ -19,5 +14,38 @@
       stroke: @hover;
       stroke-width: 10;
     }    
+  }
+
+  &-yaxis {
+    .legend();
+    height: @chartHeight;
+
+    &-item {
+      .legend-item();
+      height: 20%;
+    }
+  }
+
+  &-graph {
+    .graph-lines();
+    height: @chartHeight;
+  }
+
+  &-xaxis {
+    .legend();
+    position: absolute;
+    display: block;
+    z-index: 999;    
+    height: 20px;
+    width: 100%;    
+    bottom: -25px;
+    right: 0;
+
+    &-item {
+      .legend-item();
+      display: block;
+      float: left;
+      width: 20%;
+    }
   }
 }

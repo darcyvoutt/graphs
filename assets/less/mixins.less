@@ -5,6 +5,10 @@
 @primary: tomato;
 @hover: #cc4122;
 
+//////////////////////////////////////////////////////
+// Animations
+//////////////////////////////////////////////////////
+
 .transition (@property) {
   -webkit-transition: @property;
   -moz-transition: @property;
@@ -17,6 +21,10 @@
   -ms-transform:rotate(@degree);
   transform:rotate(@degree);
 }
+
+//////////////////////////////////////////////////////
+// Clearfix
+//////////////////////////////////////////////////////
 
 .clearfix {
   zoom: 1;
@@ -51,3 +59,49 @@
   @media screen and (max-width: 320px) { @rules(); }
   // Based on iPhone 3+4 portrait · width: 320px
 } // Use: .mobilePortrait({ .. });
+
+//////////////////////////////////////////////////////
+// Basic Graph Setup
+//////////////////////////////////////////////////////
+
+// Legends
+.legend {
+  list-style-type: none;
+  min-width: 40px; 
+  font-size: 14px;
+  display: block;    
+  float: left;
+  padding: 0;
+  margin: 0;
+  width: 6%;
+
+  .tabletPortrait({ 
+    min-width: 40px; 
+    font-size: 12px;
+    });
+}
+
+.legend-item {
+  line-height: @barHeight;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+// Graphs
+.graph {
+  position: relative;
+  display: block;  
+  float: left;
+  width: 94%;  
+
+  .tabletPortrait({ width: 90%; });
+  .mobileLandscape({ width: 85%; });
+  .mobilePortrait({ width: 82%; });
+}
+
+.graph-lines {
+  .graph();
+  border: 2px solid fade(@borders, 45%);  
+  border-radius: 3px;  
+  height: 300px;
+}

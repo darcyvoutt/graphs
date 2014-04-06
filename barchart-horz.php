@@ -12,7 +12,6 @@ $value2 = "67%";
 $value3 = "59%";
 $value4 = "45%";
 $value5 = "46%";
-
 ?>
 
 <div class="graphWidget">

@@ -1,33 +1,60 @@
-/* Line Graph */
 .lineChart {
-  border: 2px solid fade(@borders, 45%);  
-  border-radius: 3px;
-  position: relative;
-  overflow: hidden; 
-  width: inherit;
-  height: 500px;
+  @chartHeight: 500px;
   
-    circle {
-      .transition(all 0.5s ease);
-      cursor: pointer;    
-      stroke: @primary;
-      stroke-width: 3;
-      fill: @primary;
-    
-      &:hover {
-        stroke-width: 8;
-        stroke: @hover;
-        fill: @hover;
-      }
-    }
+  circle {
+    .transition(all 0.5s ease);
+    cursor: pointer;    
+    stroke: @primary;
+    stroke-width: 3;
+    fill: @primary;
   
-    line {
-      stroke: @borders;
-      stroke-width: 4;
+    &:hover {
+      stroke-width: 8;
+      stroke: @hover;
+      fill: @hover;
     }
+  }
 
-    &-trend line {
-      stroke: rgba(204, 51, 51, 0.85);
-      stroke-width: 2;
+  line {
+    stroke: @borders;
+    stroke-width: 4;
+  }
+
+  &-trend line {
+    stroke: rgba(204, 51, 51, 0.85);
+    stroke-width: 2;
+  }
+
+  &-yaxis {
+    .legend();
+    height: @chartHeight;
+
+    &-item {
+      .legend-item();
+      height: 20%;
     }
- }
+  }
+
+  &-graph {
+    .graph-lines();
+    height: @chartHeight;
+  }
+
+  &-xaxis {
+    .legend();
+    position: absolute;
+    display: block;
+    z-index: 999;    
+    height: 20px;
+    width: 100%;    
+    bottom: -25px;
+    right: 0;
+
+    &-item {
+      .legend-item();
+      display: block;
+      float: left;
+      width: 20%;
+    }
+  }
+}
