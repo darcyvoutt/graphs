@@ -6,7 +6,6 @@
   height: auto;
 
   line {    
-    .transition(all 0.5s ease);
     stroke-width: @barHeight * 2;
     stroke-linejoin: round;
     stroke: @primary;
@@ -27,7 +26,7 @@
     &:hover { cursor: pointer; }
     
     &:hover > svg line {
-      .transition(all 0.5s ease);      
+      .transition(all 0.2s ease);      
       stroke: @hover;
       fill: @hover;
     }    
