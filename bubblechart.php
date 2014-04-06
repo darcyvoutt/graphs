@@ -13,13 +13,13 @@ $y5 = "500";
   
   <div class="bubbleChart">
 
-    <ul class="bubbleChart-yaxis">
-      <li class="bubbleChart-yaxis-item"><?php echo $y1 ?></li>
-      <li class="bubbleChart-yaxis-item"><?php echo $y2 ?></li>
-      <li class="bubbleChart-yaxis-item"><?php echo $y3 ?></li>
-      <li class="bubbleChart-yaxis-item"><?php echo $y4 ?></li>
+    <ol class="bubbleChart-yaxis">
       <li class="bubbleChart-yaxis-item"><?php echo $y5 ?></li>
-    </ul>
+      <li class="bubbleChart-yaxis-item"><?php echo $y4 ?></li>
+      <li class="bubbleChart-yaxis-item"><?php echo $y3 ?></li>
+      <li class="bubbleChart-yaxis-item"><?php echo $y2 ?></li>
+      <li class="bubbleChart-yaxis-item"><?php echo $y1 ?></li>
+    </ol>
     
     <div class="bubbleChart-graph">
       <svg>
@@ -31,13 +31,13 @@ $y5 = "500";
       </svg>
       <?php include('graphlines.php'); ?>
 
-      <ul class="bubbleChart-xaxis">
+      <ol class="bubbleChart-xaxis">
         <li class="bubbleChart-xaxis-item"><?php echo $y1 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $y2 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $y3 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $y4 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $y5 ?></li>
-      </ul>
+      </ol>
     </div>
 
   </div>  

@@ -13,13 +13,13 @@ $y5 = "500";
 
   <div class="lineChart">
 
-    <ul class="lineChart-yaxis">
-      <li class="lineChart-yaxis-item"><?php echo $y1 ?></li>
-      <li class="lineChart-yaxis-item"><?php echo $y2 ?></li>
-      <li class="lineChart-yaxis-item"><?php echo $y3 ?></li>
-      <li class="lineChart-yaxis-item"><?php echo $y4 ?></li>
+    <ol class="lineChart-yaxis">
       <li class="lineChart-yaxis-item"><?php echo $y5 ?></li>
-    </ul>
+      <li class="lineChart-yaxis-item"><?php echo $y4 ?></li>
+      <li class="lineChart-yaxis-item"><?php echo $y3 ?></li>
+      <li class="lineChart-yaxis-item"><?php echo $y2 ?></li>
+      <li class="lineChart-yaxis-item"><?php echo $y1 ?></li>
+    </ol>
     
     <div class="lineChart-graph">
       <svg>  
@@ -46,13 +46,13 @@ $y5 = "500";
 
       <?php include('graphlines.php'); ?>  
 
-      <ul class="lineChart-xaxis">
+      <ol class="lineChart-xaxis">
         <li class="lineChart-xaxis-item"><?php echo $y1 ?></li>
         <li class="lineChart-xaxis-item"><?php echo $y2 ?></li>
         <li class="lineChart-xaxis-item"><?php echo $y3 ?></li>
         <li class="lineChart-xaxis-item"><?php echo $y4 ?></li>
         <li class="lineChart-xaxis-item"><?php echo $y5 ?></li>
-      </ul>
+      </ol>
     </div>    
 
   </div>
