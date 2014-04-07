@@ -11,7 +11,7 @@ $max = 100;
 $value1 = $max - 90 . "%";
 $value2 = $max - 67 . "%";
 $value3 = $max - 42 . "%";
-$value4 = $max - 38 . "%";
+$value4 = $max - 88 . "%";
 
 // Legend Variables
 $x1 = "1991";

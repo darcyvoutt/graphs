@@ -43,7 +43,6 @@ $x5 = "1995";
         <li class="bubbleChart-xaxis-item"><?php echo $x2 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $x3 ?></li>
         <li class="bubbleChart-xaxis-item"><?php echo $x4 ?></li>
-        <li class="bubbleChart-xaxis-item"><?php echo $x5 ?></li>
       </ol>
     </div>
 
