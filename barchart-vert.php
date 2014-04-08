@@ -37,10 +37,10 @@ $x4 = "1994";
     <div class="barChart-vert-graph">
 
       <svg>
-        <line x1="20%" y1="<?php echo $value1 ?>" x2="20%" y2="100%" />
-        <line x1="40%" y1="<?php echo $value2 ?>" x2="40%" y2="100%" />
-        <line x1="60%" y1="<?php echo $value3 ?>" x2="60%" y2="100%" />
-        <line x1="80%" y1="<?php echo $value4 ?>" x2="80%" y2="100%" />
+        <line class="vertBars" x1="20%" y1="<?php echo $value1 ?>" x2="20%" y2="100%" />
+        <line class="vertBars" x1="40%" y1="<?php echo $value2 ?>" x2="40%" y2="100%" />
+        <line class="vertBars" x1="60%" y1="<?php echo $value3 ?>" x2="60%" y2="100%" />
+        <line class="vertBars" x1="80%" y1="<?php echo $value4 ?>" x2="80%" y2="100%" />
       </svg>
 
       <?php include('graphlines.php'); ?> 

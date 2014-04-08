@@ -9,6 +9,7 @@
   height: auto;
 
   line {    
+    .transition(all 0.2s ease);
     stroke-width: @barHeight * 2;
     stroke-linejoin: round;
     stroke: @primary;
@@ -74,7 +75,8 @@
   position: relative;
   width: inherit;
 
-  line {    
+  line {   
+    .transition(all 0.8s ease);
     stroke-width: @barHeight * 2;
     stroke-linejoin: round;    
     stroke: @primary;
@@ -83,7 +85,7 @@
     bottom: 0;
 
     &:hover {
-      .transition(all 0.2s ease);      
+      .transition(all 0.2s ease);   
       stroke: @hover;
       fill: @hover;
     }
