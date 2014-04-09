@@ -27,4 +27,4 @@
 
 <div class="wrap">
 
-  <button>Update All - 10%</button>
+  <button>Update All - 50%</button>

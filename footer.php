@@ -10,12 +10,18 @@
     };
 
     // Variables
-    var value = 90;
+    var value = 50;
     var vertBars = 100 - value;
 
-    // Call Outs
+    // Bar Charts
     changeValues(vertBars, 'y1', 'line[class="vertBars"]');
     changeValues(value, 'x2', 'line[class="horzBars"]');
+
+    // Bubble Chart
+    changeValues(value, 'cy', 'circle[class="bubbles"]');
+
+    // Line Chart
+    changeValues(value, 'cy', 'circle[class="lineChart"]');
   </script>
   
 </body>

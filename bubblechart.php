@@ -1,10 +1,10 @@
 <?php 
 // Legend Variables
-$y1 = "100";
-$y2 = "200";
-$y3 = "300";
-$y4 = "400";
-$y5 = "500";
+$y1 = "20";
+$y2 = "40";
+$y3 = "60";
+$y4 = "80";
+$y5 = "100";
 
 // Legend Variables
 $x1 = "1991";
@@ -12,6 +12,13 @@ $x2 = "1992";
 $x3 = "1993";
 $x4 = "1994";
 $x5 = "1995";
+
+// Circle Values
+$cx1 = "40%"; $cy1 = "40%";
+$cx2 = "60%"; $cy2 = "60%";
+$cx3 = "70%"; $cy3 = "70%";
+$cx4 = "80%"; $cy4 = "80%";
+$cx5 = "90%"; $cy5 = "90%";
 ?>
 
 <div class="graphWidget">
@@ -30,11 +37,11 @@ $x5 = "1995";
     
     <div class="bubbleChart-graph">
       <svg>
-        <circle cx="50%" cy="50%" r="20" />      
-        <circle cx="15%" cy="20%" r="20" />    
-        <circle cx="40%" cy="40%" r="20" />    
-        <circle cx="70%" cy="80%" r="20" />    
-        <circle cx="90%" cy="10%" r="20" />    
+        <circle class="bubbles" cx="<?php echo $cx1 ?>" cy="<?php echo $cy1 ?>" r="20" />      
+        <circle class="bubbles" cx="<?php echo $cx2 ?>" cy="<?php echo $cy2 ?>" r="20" />    
+        <circle class="bubbles" cx="<?php echo $cx3 ?>" cy="<?php echo $cy3 ?>" r="20" />    
+        <circle class="bubbles" cx="<?php echo $cx4 ?>" cy="<?php echo $cy4 ?>" r="20" />    
+        <circle class="bubbles" cx="<?php echo $cx5 ?>" cy="<?php echo $cy5 ?>" r="20" />    
       </svg>
       <?php include('graphlines.php'); ?>
 
