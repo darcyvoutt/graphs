@@ -10,7 +10,22 @@
 }
 
 //////////////////////////////////////////////////////
-// Chart Tooltips
+// Global SVG Styles
+//////////////////////////////////////////////////////
+
+svg {
+  text {
+    font-family: @font-text;
+    font-size: 0.8em;
+  }
+
+  rect {
+    fill-opacity: 0.85;
+  }
+} 
+
+//////////////////////////////////////////////////////
+// NV Chart Styling
 //////////////////////////////////////////////////////
 
 .nvtooltip {
@@ -34,9 +49,7 @@
   }
 }
 
-svg {
-  text {
-    font-family: @font-text;
-    font-size: 0.8em;
-  }
-} 
+.nv-axislabel {
+  font-weight: 700;
+  font-size: 0.9em;
+}
