@@ -81,7 +81,6 @@ function exampleData() {
                  {"x": "ePhone 74s","y": 50}, 
                  {"x": "NextUs","y": 800}, 
                  {"x": "Humanoid","y": 100}]
-
     }
   ]
 }
