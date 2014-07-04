@@ -1,16 +1,9 @@
 <?php include('header.php'); ?>
 
-<!-- Bar Chart | Vertical -->
-<?php include('barchart-vert.php'); ?>
+  <div id="salesChart">
+    <svg></svg>
+  </div>
 
-<!-- Bar Chart | Horizontal -->
-<?php include('barchart-horz.php'); ?>
-
-<!-- Line Chart -->
-<?php include('linechart.php'); ?>
-
-<!-- Bubble Chart -->
-<?php include('bubblechart.php'); ?>
-
+  <script src="assets/js/script.js"></script>  
 
 <?php include('footer.php'); ?>

@@ -1,0 +1,42 @@
+//////////////////////////////////////////////////////
+// Sales Charts
+//////////////////////////////////////////////////////
+
+#salesChart {
+  height: 400px;
+
+  .nv-y line { stroke: rgba(0,0,0,0.1); }
+  .nv-x line { stroke: none; }
+}
+
+//////////////////////////////////////////////////////
+// Chart Tooltips
+//////////////////////////////////////////////////////
+
+.nvtooltip {
+  background-color: rgba(255,255,255,1);
+  border: none;
+  opacity: 0.2;
+  padding: 0;    
+
+  h3 {    
+    font-family: @font-text;
+    background: @primary;
+    border-radius: 0;
+    font-size: 1.1em;
+    border: none;
+    color: #fff;
+  }
+
+  p {
+    font-family: @font-number;
+    font-size: 0.9em;
+  }
+}
+
+svg {
+  text {
+    font-family: @font-text;
+    font-size: 0.8em;
+  }
+} 

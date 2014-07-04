@@ -1,35 +1,5 @@
 //////////////////////////////////////////////////////
-// Global Vartiables
-//////////////////////////////////////////////////////
-
-@chartHeight: 500px;
-@barHeight: 20px;
-@radius: 3px;
-
-@borders: #717D95;
-@barBack: #DAE4EB;
-@primary: tomato;
-@hover: #cc4122;
-
-//////////////////////////////////////////////////////
-// Animations
-//////////////////////////////////////////////////////
-
-.transition (@property) {
-  -webkit-transition: @property;
-  -moz-transition: @property;
-  -o-transition: @property;
-  transition: @property 
-}
-
-.transform(@degree) {
-  -webkit-transform:rotate(@degree); 
-  -ms-transform:rotate(@degree);
-  transform:rotate(@degree);
-}
-
-//////////////////////////////////////////////////////
-// Clearfix
+// Clearfix & Debugs
 //////////////////////////////////////////////////////
 
 .clearfix {
@@ -47,86 +17,227 @@
   }
 }
 
+.debug, .debug:before, .debug:after {
+  border: 1px solid red;
+}
+
 //////////////////////////////////////////////////////
 // Mixins for @media queries
 //////////////////////////////////////////////////////
 
+.tabletLandscape(@rules) {
+  @media screen and (max-width: 1024px) { @rules(); }
+  // Based on iPad landscape · width: 1024px
+  // Applies 1024px and lower
+} // Use: .tabletPortrait({ .. });
+
 .tabletPortrait(@rules) {
-  @media screen and (max-width: 768px) { @rules(); }
+  @media screen and (max-width: 770px) { @rules(); }
   // Based on iPad portrait · width: 768px
+  // Applies 768px and lower
 } // Use: .tabletPortrait({ .. }); 
 
-.mobileLandscape(@rules) {
-  @media screen and (max-width: 600px) { @rules(); }
+.lessThanTablet(@rules) {
+  @media screen and (max-width: 767px) { @rules(); }
   // Based on Android (Nexus 4) landscape · width: 600px
+  // Applies between 601px - 767px ONLY
+} // Use: .mobileLandscape({ .. });
+
+.mobileLandscape(@rules) {
+  @media screen and (max-width: 602px) { @rules(); }
+  // Based on Android (Nexus 4) landscape · width: 600px
+  // Applies 600px and lower
 } // Use: .mobileLandscape({ .. });
 
 .mobilePortrait(@rules) {
-  @media screen and (max-width: 320px) { @rules(); }
+  @media screen and (max-width: 322px) { @rules(); }
   // Based on iPhone 3+4 portrait · width: 320px
+  // Applies 320px and lower
 } // Use: .mobilePortrait({ .. });
 
 //////////////////////////////////////////////////////
-// Basic Graph Setup
+// Browser Prefix
 //////////////////////////////////////////////////////
 
-// Legends
-.legend {
-  list-style-type: none;
-  min-width: 40px; 
-  font-size: 14px;
-  display: block;    
-  float: left;
-  padding: 0;
-  margin: 0;
-  width: 6%;
-
-  .tabletPortrait({ 
-    min-width: 40px; 
-    font-size: 12px;
-    });
+.browserPrefix(@property; @value) {
+  -webkit-@{property}:  @value;
+  -moz-@{property}:     @value;
+  -ms-@{property}:      @value;
+  @{property}:          @value;
 }
 
-.legend-item {
-  line-height: @barHeight;
+//////////////////////////////////////////////////////
+// Font Mixins
+//////////////////////////////////////////////////////
 
-  &:last-child { margin-bottom: 0; }
+.uppercaseFont(@size) {
+  font-family: @uppercaseFont;  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: @size; 
 }
 
-.xaxis {
-  .legend();
+//////////////////////////////////////////////////////
+// Retina Image Support
+//////////////////////////////////////////////////////
+
+.retinaImage(@rules) {
+  @media
+  screen and (-webkit-min-device-pixel-ratio: 1.5),
+  screen and (-moz-min-device-pixel-ratio: 1.5),
+  screen and (min-device-pixel-ratio: 1.5) { 
+    background-size: 100%;
+    @rules();     
+  }
+}
+
+//////////////////////////////////////////4////////////
+// Flexbox Mixins
+//////////////////////////////////////////////////////
+
+.flexbox(@direction, @wrap, @align, @start) {
+  // Older Implementation
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flexbox;
+
+  // Modern Implementation
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  
+  -webkit-flex-flow: @direction @wrap;
+  -moz-flex-flow: @direction @wrap;
+  -ms-flex-flow: @direction @wrap;
+  flex-flow: @direction @wrap;
+
+  -webkit-@{align}: @start;
+  -moz-@{align}: @start;
+  -ms-@{align}: @start;
+  @{align}: @start;
+}
+
+.flex(@values) {
+  -webkit-box-flex: @values;
+  -moz-box-flex: @values;
+  -webkit-flex: @values;
+  -ms-flex: @values;
+  flex: @values;
+}
+
+.order(@val) {
+  -webkit-box-ordinal-group: @val;  
+  -moz-box-ordinal-group: @val;     
+  -ms-flex-order: @val;     
+  -webkit-order: @val;  
+  order: @val;
+}
+
+//////////////////////////////////////////////////////
+// Double Border
+//////////////////////////////////////////////////////
+
+.doubleBorder (@border: #999; @background: #fff) {
+  border: 1px solid @border;
+  box-shadow: inset 0 0 0 2px @background, 
+              inset 0 0 0 3px @border;
+}
+
+//////////////////////////////////////////////////////
+// Styling Around Content
+//////////////////////////////////////////////////////
+
+.contentBefore (@content; @margin) {
+  display: inline-block;
+  content: @content;
+  margin: @margin;
+  right: 110%;
+  top: 0;
+}
+
+.contentAfter (@content; @margin) {
+  display: inline-block;
+  content: @content;
+  margin: @margin;
+  left: 110%;
+  top: 0;
+}
+
+
+//////////////////////////////////////////////////////
+// Icons After
+//////////////////////////////////////////////////////
+
+.pngIcon(@size; @icon; @yaxis; @topBottom; @xaxis; @leftRight) {      
+  background: url("../images/icons/@{icon}.png") center center no-repeat;
+  background-size: 100%;
+  @{xaxis}: @leftRight;
+  @{yaxis}: @topBottom;  
   position: absolute;
   display: block;
-  z-index: 9999;    
-  height: 20px;
-  width: 100%;    
-  bottom: -25px;
-  right: -15px;
+  height: @size;
+  width: @size;
+  content: "";
+
+  .retinaImage({
+    background-image: url("../images/icons/@{icon}@2x.png");          
+  });
 }
 
-.xaxis-item {
-  .legend-item();
-  text-align: right;
+.svgIcon(@size; @icon; @yaxis; @topBottom; @xaxis; @leftRight) {       
+  background: url("../images/icons/@{icon}.svg") center center no-repeat;
+  background-size: 100%;
+  @{xaxis}: @leftRight;
+  @{yaxis}: @topBottom;  
+  position: absolute;
   display: block;
-  float: left;
-  width: 20%;  
+  height: @size;
+  width: @size;
+  content: "";  
 }
 
-// Graphs
-.graph {
-  position: relative;
-  display: block;  
-  float: left;
-  width: 94%;  
+//////////////////////////////////////////////////////
+// Input Placeholder Styling
+//////////////////////////////////////////////////////
 
-  .tabletPortrait({ width: 90%; });
-  .mobileLandscape({ width: 85%; });
-  .mobilePortrait({ width: 82%; });
+.placeholder(@rules) {
+  ::-webkit-input-placeholder { @rules(); }
+  :-moz-placeholder { @rules(); }
+  ::-moz-placeholder { @rules(); }
+  :-ms-input-placeholder { @rules(); }
 }
 
-.graph-lines {
-  .graph();
-  border: 2px solid fade(@borders, 45%);  
-  border-radius: 3px;  
-  height: 300px;
+//////////////////////////////////////////////////////
+// CSS Animations
+//////////////////////////////////////////////////////
+
+.transform (@property) {
+  -webkit-transform: @property; 
+  -ms-transform: @property; 
+  transform: @property;
+}
+
+.appearance (@value) {
+   -webkit-appearance: @value;
+   -moz-appearance:    @value;
+   appearance:         @value;
+}
+
+// Mixin for transition/transform
+.translate(@x; @y) {
+  -webkit-transform: translate(@x, @y);
+      -ms-transform: translate(@x, @y); // IE9+
+          transform: translate(@x, @y);
+}
+.transition(@transition) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+.transition-transform(@transition) {
+  -webkit-transition: -webkit-transform @transition;
+     -moz-transition: -moz-transform @transition;
+       -o-transition: -o-transform @transition;
+          transition: transform @transition;
 }

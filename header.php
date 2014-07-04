@@ -20,6 +20,9 @@
   <!-- Scripts -->    
   <script src="assets/js/libraries/less-1.7.0.min.js"></script>
   <script src="assets/js/libraries/jquery-1.11.0.min.js"></script>
+  <script src="assets/js/libraries/d3.min.js"></script>  
+  <script src="assets/js/libraries/nv.d3.min.js"></script>
+  <script src="assets/js/stream_layers.js"></script> <!-- Sample Data -->
 
 </head>
   
@@ -27,4 +30,4 @@
 
 <div class="wrap">
 
-  <button>Update All - 50%</button>
+  <!-- <button>Update All - 50%</button> -->

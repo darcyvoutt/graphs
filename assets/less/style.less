@@ -1,16 +1,22 @@
 //////////////////////////////////////////////////////
+// Library & Font Imports
+//////////////////////////////////////////////////////
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700);
+@import (less) "nv.d3.min.css";
+
+//////////////////////////////////////////////////////
 // Base CSS such as layout and resets
 //////////////////////////////////////////////////////
 
+@import "config.less";
+@import "mixins.less";
 @import "base.less";
 @import "layout.less";
-@import "mixins.less";
 
 //////////////////////////////////////////////////////
 // CSS for specific modules or elements
 //////////////////////////////////////////////////////
 
-@import "modules/graphstyling.less";
-@import "modules/barcharts.less";
-@import "modules/linegraph.less";
-@import "modules/bubblechart.less";
+@import "modules/charts.less";
