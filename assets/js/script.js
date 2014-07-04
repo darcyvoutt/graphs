@@ -10,16 +10,36 @@ nv.addGraph(function() {
     ;
 
   chart.xAxis       
-      .axisLabel("Products")
+      .axisLabel("Products")            
       ;
 
   chart.yAxis
-      .tickFormat(d3.format(',1r'))
+      .tickFormat(d3.format(".3s"))
+      .axisLabel('Sales (units)')
+      .axisLabelDistance(30)
       ;
+
+  // function yAxisTicks(selection) {
+  //   selection.selectAll('.nv-y .tick text')
+  //     .attr('transform', 'translate(38,12)');
+  // }
+
+  // function yAxisMinMax(selection) {
+  //   selection.selectAll('.nv-y .nv-axisMaxMin text')
+  //     .attr('display','none');
+  // }
+
+  // function legendsWrap(selection) {
+  //   selection.selectAll('.nv-legendWrap')
+  //     .attr('transform', 'translate(35,-39)');
+  // }
 
   d3.select('#salesChart svg')
       .datum(exampleData())
-      .call(chart)
+      .call(chart)      
+      // .call(yAxisTicks)
+      // .call(yAxisMinMax)
+      // .call(legendsWrap)
       ;
 
   nv.utils.windowResize(chart.update);

@@ -1,9 +1,15 @@
 //////////////////////////////////////////////////////
+// Local Variables
+//////////////////////////////////////////////////////
+
+@fontWeight: 300;
+
+//////////////////////////////////////////////////////
 // Sales Charts
 //////////////////////////////////////////////////////
 
 #salesChart {
-  height: 400px;
+  height: 500px;
 
   .nv-y line { stroke: rgba(0,0,0,0.1); }
   .nv-x line { stroke: none; }
@@ -15,7 +21,8 @@
 
 svg {
   text {
-    font-family: @font-text;
+    font-family: @font-number;
+    font-weight: @fontWeight;
     font-size: 0.8em;
   }
 
@@ -49,7 +56,10 @@ svg {
   }
 }
 
-.nv-axislabel {
-  font-weight: 700;
-  font-size: 0.9em;
+.nv-axisMaxMin text {
+  font-weight: @fontWeight !important;
+}
+
+path.domain { // Gets rid line on Y axis
+  stroke: none !important;
 }
