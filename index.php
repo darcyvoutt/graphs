@@ -1,9 +1,10 @@
 <?php include('header.php'); ?>
 
-  <div id="salesChart">
-    <svg></svg>
-  </div>
+  <!-- Sales -->
+  <?php include('sales.php'); ?>
 
-  <script src="assets/js/script.js"></script>  
+  <!-- Marketing -->
+  <?php include('marketing.php'); ?>
+
 
 <?php include('footer.php'); ?>

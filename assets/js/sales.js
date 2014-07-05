@@ -1,3 +1,4 @@
+// Chart Properties
 nv.addGraph(function() {
   var chart = nv.models.multiBarChart()    
     .color(["#24545F", "#428696", "#6DADBD", "#58CBE7"])
@@ -19,27 +20,9 @@ nv.addGraph(function() {
       .axisLabelDistance(30)
       ;
 
-  // function yAxisTicks(selection) {
-  //   selection.selectAll('.nv-y .tick text')
-  //     .attr('transform', 'translate(38,12)');
-  // }
-
-  // function yAxisMinMax(selection) {
-  //   selection.selectAll('.nv-y .nv-axisMaxMin text')
-  //     .attr('display','none');
-  // }
-
-  // function legendsWrap(selection) {
-  //   selection.selectAll('.nv-legendWrap')
-  //     .attr('transform', 'translate(35,-39)');
-  // }
-
   d3.select('#salesChart svg')
       .datum(exampleData())
-      .call(chart)      
-      // .call(yAxisTicks)
-      // .call(yAxisMinMax)
-      // .call(legendsWrap)
+      .call(chart)            
       ;
 
   nv.utils.windowResize(chart.update);
@@ -47,7 +30,7 @@ nv.addGraph(function() {
   return chart;
 });
 
-//Generate some nice data.
+// Data Array
 function exampleData() {
   return [
     {
@@ -84,3 +67,23 @@ function exampleData() {
     }
   ]
 }
+
+
+// function yAxisTicks(selection) {
+//   selection.selectAll('.nv-y .tick text')
+//     .attr('transform', 'translate(38,12)');
+// }
+
+// function yAxisMinMax(selection) {
+//   selection.selectAll('.nv-y .nv-axisMaxMin text')
+//     .attr('display','none');
+// }
+
+// function legendsWrap(selection) {
+//   selection.selectAll('.nv-legendWrap')
+//     .attr('transform', 'translate(35,-39)');
+// }
+
+// .call(yAxisTicks)
+// .call(yAxisMinMax)
+// .call(legendsWrap)
