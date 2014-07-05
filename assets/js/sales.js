@@ -67,23 +67,3 @@ function exampleData() {
     }
   ]
 }
-
-
-// function yAxisTicks(selection) {
-//   selection.selectAll('.nv-y .tick text')
-//     .attr('transform', 'translate(38,12)');
-// }
-
-// function yAxisMinMax(selection) {
-//   selection.selectAll('.nv-y .nv-axisMaxMin text')
-//     .attr('display','none');
-// }
-
-// function legendsWrap(selection) {
-//   selection.selectAll('.nv-legendWrap')
-//     .attr('transform', 'translate(35,-39)');
-// }
-
-// .call(yAxisTicks)
-// .call(yAxisMinMax)
-// .call(legendsWrap)

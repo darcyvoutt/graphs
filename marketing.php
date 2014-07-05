@@ -9,45 +9,29 @@
 <?php
  $marketingArray = array(
     array(
-        'key' => 'Basic Planners',
-        'values'=> array(
-            array('x' => 'YourPhone', 'y' => 150),
-            array('x' => 'Universe X3', 'y' => 300),
-            array('x' => 'ePhone 74s', 'y' => 1500),
-            array('x' => 'NextUs', 'y' => 50),
-            array('x' => 'Humanoid', 'y' => 500),
+        'key' => 'Market',
+        'values' => array(
+            array('x' => 0.20, 'y' => 25, 'size' => 230),            
+            array('x' => 0.40, 'y' => 39, 'size' => 350),            
+            array('x' => 0.70, 'y' => 5,  'size' => 200),            
+            array('x' => 0.90, 'y' => 23, 'size' => 200)
         )
     ),
     array(
-        'key' => 'No-Namers',
-        'values'=> array(
-            array('x' => 'YourPhone', 'y' => 300),
-            array('x' => 'Universe X3', 'y' => 250),
-            array('x' => 'ePhone 74s', 'y' => 400),
-            array('x' => 'NextUs', 'y' => 150),
-            array('x' => 'Humanoid', 'y' => 900),
+        'key' => 'Competitor',
+        'values' => array(
+            array('x' => 0.20, 'y' => 20, 'size' => 150),            
+            array('x' => 0.45, 'y' => 45, 'size' => 200),            
+            array('x' => 0.70, 'y' => 70, 'size' => 180),            
+            array('x' => 0.30, 'y' => 30, 'size' => 340)         
         )
     ),
     array(
-        'key' => 'Feature Followers',
-        'values'=> array(
-            array('x' => 'YourPhone', 'y' => 359),
-            array('x' => 'Universe X3', 'y' => 900),
-            array('x' => 'ePhone 74s', 'y' => 100),
-            array('x' => 'NextUs', 'y' => 500),
-            array('x' => 'Humanoid', 'y' => 250),
+        'key' => 'Your Product',
+        'values' => array(
+            array('x' => 0.50, 'y' => 30, 'size' => 50),
         )
-    ),
-    array(
-        'key' => 'Hipsters & Elites',
-        'values'=> array(
-            array('x' => 'YourPhone', 'y' => 200),
-            array('x' => 'Universe X3', 'y' => 350),
-            array('x' => 'ePhone 74s', 'y' => 50),
-            array('x' => 'NextUs', 'y' => 800),
-            array('x' => 'Humanoid', 'y' => 100),
-        )
-    ),
+    )
   );
 
   $marketingData = json_encode($marketingArray);
@@ -63,21 +47,42 @@
 <!-- JavaScript Chart Setup -->
 <script type="text/javascript">
   nv.addGraph(function() {
-    var chart = nv.models.scatterChart()
-                  .showDistX(true)
-                  .showDistY(true)
-                  .color(d3.scale.category10().range());
+    var yourProductColor = "rgba(242,94,34,0.58)";
+    var competitorColor = "rgba(57,198,226,58)";
+    var marketColor = "rgba(255,255,255,0.75)";
 
-    chart.xAxis.tickFormat(d3.format('.02f'));
-    chart.yAxis.tickFormat(d3.format('.02f'));
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .transitionDuration(350)
+      .color([marketColor, competitorColor, yourProductColor])
+      ;
+
+    //Configure how the tooltip looks.
+    chart.tooltipContent(function(key) {
+        return '<h3>' + key + '</h3>';
+    });
+
+    chart.yAxis
+        .tickFormat(d3.format('.02f'))
+        .axisLabel("Frequency")
+        ;
+
+    chart.xAxis
+        .axisLabel("Tranditional Media - Digital & Social Media")
+        .tickFormat(d3.format('.02f'))
+        ;   
+
+    //We want to show shapes other than circles.
+    chart.scatter.onlyCircles(false);
 
     d3.select('#marketingChart svg')
-        .datum(data(4,40))
-        .transition().duration(500)
-        .call(chart);
+        .datum(<?php echo $marketingData; ?>)
+        .call(chart)
+        ;
 
     nv.utils.windowResize(chart.update);
 
     return chart;
-  });  
+  });
 </script>

@@ -1,54 +1,53 @@
 <!-- HTML Markup -->
-<h1>Sales Volume per Market</h1>
+<h2>Sales Volume per Market</h2>
 
 <div id="salesChart">
   <svg></svg>
 </div>
 
 <!-- PHP Data -->
-
 <?php
  $salesArray = array(
     array(
         'key' => 'Basic Planners',
-        'values'=> array(
+        'values' => array(
             array('x' => 'YourPhone', 'y' => 150),
             array('x' => 'Universe X3', 'y' => 300),
             array('x' => 'ePhone 74s', 'y' => 1500),
             array('x' => 'NextUs', 'y' => 50),
-            array('x' => 'Humanoid', 'y' => 500),
+            array('x' => 'Humanoid', 'y' => 500)
         )
     ),
     array(
         'key' => 'No-Namers',
-        'values'=> array(
+        'values' => array(
             array('x' => 'YourPhone', 'y' => 300),
             array('x' => 'Universe X3', 'y' => 250),
             array('x' => 'ePhone 74s', 'y' => 400),
             array('x' => 'NextUs', 'y' => 150),
-            array('x' => 'Humanoid', 'y' => 900),
+            array('x' => 'Humanoid', 'y' => 900)
         )
     ),
     array(
         'key' => 'Feature Followers',
-        'values'=> array(
+        'values' => array(
             array('x' => 'YourPhone', 'y' => 359),
             array('x' => 'Universe X3', 'y' => 900),
             array('x' => 'ePhone 74s', 'y' => 100),
             array('x' => 'NextUs', 'y' => 500),
-            array('x' => 'Humanoid', 'y' => 250),
+            array('x' => 'Humanoid', 'y' => 250)
         )
     ),
     array(
         'key' => 'Hipsters & Elites',
-        'values'=> array(
+        'values' => array(
             array('x' => 'YourPhone', 'y' => 200),
             array('x' => 'Universe X3', 'y' => 350),
             array('x' => 'ePhone 74s', 'y' => 50),
             array('x' => 'NextUs', 'y' => 800),
-            array('x' => 'Humanoid', 'y' => 100),
+            array('x' => 'Humanoid', 'y' => 100)
         )
-    ),
+    )
   );
 
   $salesData = json_encode($salesArray);
@@ -67,7 +66,7 @@
   nv.addGraph(function() {
     var chart = nv.models.multiBarChart()    
       .color(["#24545F", "#428696", "#6DADBD", "#58CBE7"])
-      .transitionDuration(10)
+      .transitionDuration(100)
       .showControls(false)
       .groupSpacing(0.55) 
       .showLegend(true)    
