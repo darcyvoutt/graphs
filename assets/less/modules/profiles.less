@@ -6,6 +6,8 @@
 @priceHeight: 30px;  
 @barHeights: 20px;
 @rateWidth: 15%;
+@priceFade: 70%;
+@textMargin: 5px;
 
 //////////////////////////////////////////////////////
 // Sales Charts
@@ -59,8 +61,8 @@
 
     b {
       font-weight: @font-bold;
-      text-align: left;      
-      color: #60D68A;
+      color: @rateValue;
+      text-align: left;            
     }
 
     &:after {
@@ -88,7 +90,7 @@
     }
   }
 
-  &-rating {  
+  &-feature {  
     margin-bottom: 5px;
     overflow: hidden;
     display: block;
@@ -107,7 +109,7 @@
   }
 
   &-value {
-    .transition(all 0.3s linear);
+    .transition(all 0.35s linear);
     background: @rateValue;        
     height: 100%;
     width: 0%;
@@ -117,7 +119,7 @@
     }
   }
 
-  &-rate {    
+  &-number {    
     line-height: @barHeights;    
     font-weight: @font-bold;
     background: @rateColor;                
@@ -129,6 +131,33 @@
     display: block;
     float: left;
   }
+
+  &-rating {
+    margin-top: @textMargin;
+    font-color: @font-light;
+    letter-spacing: 5px;
+    text-align: center;
+    font-size: 1.2em;
+
+    b {      
+      font-weight: @font-bold;      
+      color: @rateValue;
+      text-align: left;            
+    }
+  }
+
+  &-text {
+    margin-top: @textMargin;
+    font-weight: @font-bold;
+    text-align: center;
+    color: @font-light;
+    font-size: 0.9em;      
+    padding: 5px 0; 
+  }
+
+  .is-high { background: fade(@is-high,80%); }  
+  .is-medium { background: fade(@is-medium,80%); }
+  .is-low { background: fade(@is-low,60%); }
 }
 
 //////////////////////////////////////////////////////
@@ -137,10 +166,14 @@
 
 #productProfiles {
   .profile-price {
-    background: fade(@rateValue,70%);
+    background: fade(@rateValue,@priceFade);
     font-weight: @font-bold;
   }
 }
 
-#marketProfiles {}
-#supplierProfiles {}
+#supplierProfiles {
+  .profile-price {
+    background: fade(@rateValue,@priceFade);
+    font-weight: @font-bold;
+  }
+}

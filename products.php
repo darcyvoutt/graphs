@@ -75,12 +75,12 @@
 
     <?php foreach ($product['Values'] as $feature => $value) { ?>    
 
-      <div class="profile-rating">
+      <div class="profile-feature">
         <label><?php echo $feature; ?></label>
         <div class="profile-bar">
           <div class="profile-value" data-value="<?php echo $value; ?>"></div>
         </div>
-        <div class="profile-rate"><?php echo $value; ?></div>
+        <div class="profile-number"><?php echo $value; ?></div>
       </div>
 
     <?php } ?>     

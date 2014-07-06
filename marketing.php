@@ -52,7 +52,7 @@
 
     var chart = nv.models.scatterChart()
       .color([marketColor, competitorColor, yourProductColor])
-      .transitionDuration(300)
+      .transitionDuration(350)
       .margin({bottom: 60})
       .showDistX(true)
       .showDistY(true)      

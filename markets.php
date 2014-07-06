@@ -53,14 +53,14 @@
   <!-- Start PHP -->
   <?php foreach ($markets as $market) {
 
-    // Symbols Calc
+    // Calculate the number of '$' symbols to show
     $maxSymbols = 5;
     $priceSymbol = "$";  
     $numSymbols = $market['Price'];
     $totalSymbols = $maxSymbols - $numSymbols;
 
-    $greenSymbols = str_repeat($priceSymbol, $numSymbols);
-    $whiteSymbols = str_repeat($priceSymbol, $totalSymbols); 
+    $actualSymbols = str_repeat($priceSymbol, $numSymbols);
+    $remainingSymbols = str_repeat($priceSymbol, $totalSymbols); 
 
   ?>
 
@@ -69,7 +69,7 @@
 
         <h3 class="profile-title"><?php echo $market['Market']; ?></h3>
         <span class="profile-price">
-          <b><?php echo $greenSymbols; ?></b><?php echo $whiteSymbols; ?>
+          <b><?php echo $actualSymbols; ?></b><?php echo $remainingSymbols; ?>
         </span>
 
     </div>
@@ -78,12 +78,12 @@
 
     <?php foreach ($market['Values'] as $feature => $value) { ?>    
 
-      <div class="profile-rating">
+      <div class="profile-feature">
         <label><?php echo $feature; ?></label>
         <div class="profile-bar">
           <div class="profile-value" data-value="<?php echo $value; ?>"></div>
         </div>
-        <div class="profile-rate"><?php echo $value; ?></div>
+        <div class="profile-number"><?php echo $value; ?></div>
       </div>
 
     <?php } ?>     

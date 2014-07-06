@@ -34,4 +34,12 @@
 
 <div class="wrap">
 
-  <!-- <button>Update All - 50%</button> -->
+<button class="revealData">Reveal Data</button>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.revealData').click(function() {
+        $('.dataDump').toggle(300);
+      });
+    });
+  </script>
