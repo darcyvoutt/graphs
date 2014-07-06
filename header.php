@@ -26,7 +26,7 @@
   <script src="assets/js/libraries/jquery-1.11.0.min.js"></script>
   <script src="assets/js/libraries/d3.min.js"></script>  
   <script src="assets/js/libraries/nv.d3.min.js"></script>
-  <script src="assets/js/stream_layers.js"></script> <!-- Sample Data -->
+  <script src="assets/js/profiles.js"></script>
 
 </head>
   

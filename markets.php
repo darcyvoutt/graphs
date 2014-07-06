@@ -46,9 +46,9 @@
 ?>
 
 <!-- HTML Markup -->
-<h2>Market Needs</h2>
+<h2>What are customers asking for?</h2>
 
-<div id="marketProfiles">
+<div id="marketProfiles" class="profiles">
 
   <!-- Start PHP -->
   <?php foreach ($markets as $market) {
@@ -64,24 +64,24 @@
 
   ?>
 
-  <div class="marketNeed">
-    <div class="marketNeed-header">
+  <div class="profile">
+    <div class="profile-header">
 
-        <h3 class="marketNeed-title"><?php echo $market['Market']; ?></h3>
-        <span class="marketNeed-price" data-value="<?php echo $greenSymbols; ?>"><?php echo $whiteSymbols; ?></span>
+        <h3 class="profile-title"><?php echo $market['Market']; ?></h3>
+        <span class="profile-price" data-value="<?php echo $greenSymbols; ?>"><?php echo $whiteSymbols; ?></span>
 
     </div>
 
-    <div class="marketNeed-content">
+    <div class="profile-content">
 
     <?php foreach ($market['Values'] as $feature => $value) { ?>    
 
-      <div class="marketNeed-rating">
+      <div class="profile-rating">
         <label><?php echo $feature; ?></label>
-        <div class="marketNeed-bar">
-          <div class="marketNeed-value" data-value="<?php echo $value; ?>"></div>
+        <div class="profile-bar">
+          <div class="profile-value" data-value="<?php echo $value; ?>"></div>
         </div>
-        <div class="marketNeed-rate"><?php echo $value; ?></div>
+        <div class="profile-rate"><?php echo $value; ?></div>
       </div>
 
     <?php } ?>     
@@ -99,12 +99,3 @@
   <h4>Data Dump (Debugging)</h4>
   <pre><?php var_export($markets); ?></pre>
 </div>
-
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('.marketNeed-value').each(function() {
-       var dataWidth = $(this).data('value');
-       $(this).css("width", (dataWidth * 10) + "%");
-    });
-  });
-</script>

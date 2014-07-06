@@ -52,9 +52,10 @@
 
     var chart = nv.models.scatterChart()
       .color([marketColor, competitorColor, yourProductColor])
-      .transitionDuration(350)
+      .transitionDuration(300)
+      .margin({bottom: 60})
       .showDistX(true)
-      .showDistY(true)       
+      .showDistY(true)      
       ;
 
     //Configure how the tooltip looks.
@@ -66,9 +67,10 @@
         .tickFormat(d3.format('.02f'))
         .axisLabel("Frequency")
         ;
+      
 
     chart.xAxis
-        .axisLabel("Tranditional Media - Digital & Social Media")
+        .axisLabel("Tranditional Media -> Digital & Social Media")
         .tickFormat(d3.format('.02f'))
         ;   
 

@@ -21,6 +21,7 @@
 svg {
   text {
     font-family: @font-number;
+    font-weight: @font-weight;
     font-size: 0.8em;
   }
 
@@ -34,9 +35,7 @@ svg {
 //////////////////////////////////////////////////////
 
 .nvtooltip {
-  background-color: rgba(255,255,255,1);
   border: none;
-  opacity: 0.2;
   padding: 0;    
 
   h3 {    
@@ -64,4 +63,8 @@ path.domain { // Gets rid line on Y axis
 
 .nv-dist line {
   opacity: 0.6;
+}
+
+.nv-axislabel {
+  fill: lighten(@font-color, 10%);
 }

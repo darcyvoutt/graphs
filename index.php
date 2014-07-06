@@ -10,8 +10,11 @@
     });
   </script>
 
-  <!-- Profiles -->
-  <?php include('profiles.php'); ?>
+  <!-- Product Profiles -->
+  <?php include('products.php'); ?>
+
+  <!-- Market Profiles -->
+  <?php include('markets.php'); ?>
 
   <!-- Sales -->
   <?php include('sales.php'); ?>

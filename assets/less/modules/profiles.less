@@ -11,13 +11,13 @@
 // Sales Charts
 //////////////////////////////////////////////////////
 
-#marketProfiles {
+.profiles {
   overflow: hidden;  
   display: block;  
   height: auto;
 }
 
-.marketNeed {
+.profile {
   background: rgba(89,89,89,0.8);
   font-family: @font-text;
   margin: 0 30px 20px 0;
@@ -59,8 +59,8 @@
 
     &:before {
       content: attr(data-value);
-      text-align: left;
-      font-weight: 500;      
+      font-weight: @font-bold;
+      text-align: left;      
       color: #60D68A;
     }
 
@@ -120,14 +120,28 @@
 
   &-rate {    
     line-height: @barHeights;    
+    font-weight: @font-bold;
     background: @rateColor;                
     height: @barHeights;
     text-align: center;
     width: @rateWidth;
-    font-weight: 500;
     font-size: 0.6em; 
     color: #45454D;
     display: block;
     float: left;
   }
 }
+
+//////////////////////////////////////////////////////
+// Specific Profile Changes
+//////////////////////////////////////////////////////
+
+#productProfiles {
+  .profile-price {
+    background: fade(@rateValue,70%);
+    font-weight: @font-bold;
+  }
+}
+
+#marketProfiles {}
+#supplierProfiles {}
