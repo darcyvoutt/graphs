@@ -54,11 +54,10 @@
 ?>
 
 <!-- Data Dump (Debugging) -->
-<h4>Data Dump (Debugging)</h4>
-
-<pre>
-  <?php var_export($salesData); ?>
-</pre>
+<div class="dataDump">
+  <h4>Data Dump (Debugging)</h4>
+  <pre><?php var_export($salesData); ?></pre>
+</div>
 
 <!-- JavaScript Chart Setup -->
 

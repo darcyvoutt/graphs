@@ -38,11 +38,10 @@
 ?>
 
 <!-- Data Dump (Debugging) -->
-<h4>Data Dump (Debugging)</h4>
-
-<pre>
-  <?php var_export($marketingData); ?>
-</pre>
+<div class="dataDump">
+  <h4>Data Dump (Debugging)</h4>
+  <pre><?php var_export($marketingData); ?></pre>
+</div>
 
 <!-- JavaScript Chart Setup -->
 <script type="text/javascript">

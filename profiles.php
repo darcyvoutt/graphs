@@ -95,11 +95,10 @@
 </div>
 
 <!-- Data Dump (Debugging) -->
-<h4>Data Dump (Debugging)</h4>
-
-<pre>
-  <?php var_export($markets); ?>
-</pre>
+<div class="dataDump">
+  <h4>Data Dump (Debugging)</h4>
+  <pre><?php var_export($markets); ?></pre>
+</div>
 
 <script type="text/javascript">
   $(document).ready(function() {
