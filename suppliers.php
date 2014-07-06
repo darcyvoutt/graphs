@@ -84,13 +84,14 @@
         <label>Defects</label>
         <div class="profile-text
           <?php 
+            // Determine the '.is-' class based on defect number
             if ( $rating == 3 ) { echo 'is-high'; } 
             elseif ( $rating == 2 ) { echo 'is-medium'; } 
             else { echo 'is-low'; } 
           ?>
         ">
           <?php 
-            // Determine the '.is-' class and label for defects                
+            // Determine the label based on defect number
             if ( $rating == 3 ) { echo 'High'; } 
             elseif ( $rating == 2 ) { echo 'Medium'; } 
             else { echo 'Low'; } 
