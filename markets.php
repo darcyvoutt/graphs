@@ -68,7 +68,9 @@
     <div class="profile-header">
 
         <h3 class="profile-title"><?php echo $market['Market']; ?></h3>
-        <span class="profile-price" data-value="<?php echo $greenSymbols; ?>"><?php echo $whiteSymbols; ?></span>
+        <span class="profile-price">
+          <b><?php echo $greenSymbols; ?></b><?php echo $whiteSymbols; ?>
+        </span>
 
     </div>
 
