@@ -29,7 +29,7 @@
     array(
         'key' => 'Your Product',
         'values' => array(
-            array('x' => 0.50, 'y' => 30, 'size' => 50),
+            array('x' => 0.50, 'y' => 30, 'size' => 50, 'label' => 'YourProduct'),
         )
     )
   );
@@ -52,10 +52,10 @@
     var marketColor = "rgba(255,255,255,0.75)";
 
     var chart = nv.models.scatterChart()
-      .showDistX(true)
-      .showDistY(true)
-      .transitionDuration(350)
       .color([marketColor, competitorColor, yourProductColor])
+      .transitionDuration(350)
+      .showDistX(true)
+      .showDistY(true)       
       ;
 
     //Configure how the tooltip looks.

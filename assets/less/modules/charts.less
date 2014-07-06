@@ -2,9 +2,6 @@
 // Local Variables
 //////////////////////////////////////////////////////
 
-@fontWeight: 300;
-@chartHeight: 500px;
-
 //////////////////////////////////////////////////////
 // Sales Charts
 //////////////////////////////////////////////////////
@@ -24,7 +21,6 @@
 svg {
   text {
     font-family: @font-number;
-    font-weight: @fontWeight;
     font-size: 0.8em;
   }
 
@@ -44,8 +40,8 @@ svg {
   padding: 0;    
 
   h3 {    
-    font-family: @font-text;
-    background: @primary;
+    background: @tooltipTitle;
+    font-family: @font-text;    
     border-radius: 0;
     font-size: 1.1em;
     border: none;
@@ -59,9 +55,13 @@ svg {
 }
 
 .nv-axisMaxMin text {
-  font-weight: @fontWeight !important;
+  font-weight: @font-weight !important;
 }
 
 path.domain { // Gets rid line on Y axis
   stroke: none !important;
+}
+
+.nv-dist line {
+  opacity: 0.6;
 }
