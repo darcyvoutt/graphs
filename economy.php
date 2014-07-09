@@ -1,7 +1,10 @@
 <!-- HTML Markup -->
 <h2>Economy</h2>
 
-<div id="economyChart">
+<label>Rounds: 20</label>
+<button class="chart-refresh">Refresh Page</button><br>  
+
+<div id="economyChart">  
   <svg></svg>
 </div>
 
@@ -33,7 +36,7 @@
 
     d3.select('#economyChart svg')
         .datum(economyData())
-        .transition().duration(350)
+        .transition().duration(800)
         .call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -41,14 +44,16 @@
     return chart;
   });
 
+  // Data Calc
   function economyData() {  
 
-    var values =[];
+    var numRounds = 20;
 
-    for (i = 0; i < 20; i++) {
+    var values =[];
+    for (i = 0; i < numRounds + 1; i++) {
       values[i] = new Array(2);
       values[i][0] = i;
-      values[i][1] = (Math.random();
+      values[i][1] = Math.round( Math.random() * 100) / 100;
     }
 
     return [
@@ -60,5 +65,12 @@
   
   }
 
+  $(document).ready(function() {
+    $('.chart-refresh').on('click', function() {
+      location.reload();
+    });
+  });
+  
+  // Print the data to Data Dump
   document.getElementById("dataDump").innerHTML = JSON.stringify(economyData());
 </script>

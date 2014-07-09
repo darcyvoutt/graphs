@@ -14,10 +14,10 @@
   .nv-x line { stroke: none; }
 }
 
-#marketingChart {
-}
-
 #economyChart {
+  margin: 75px 0;
+  height: 150px;
+
   .nv-background, 
   .nv-indexLine,
   .nv-axis { 
@@ -36,6 +36,10 @@
 svg {
   position: relative;
   z-index: 100;
+
+  path, line {
+    stroke-linejoin: round;
+  }
 
   text {
     font-family: @font-number;
