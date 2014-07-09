@@ -56,7 +56,7 @@
 ?>
 
 <!-- HTML Markup -->
-<h2>What are the products people are buying?</h2>
+<h2>What are the products people are people selling?</h2>
 
 <div id="productProfiles" class="profiles">
 

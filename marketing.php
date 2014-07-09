@@ -11,25 +11,25 @@
     array(
         'key' => 'Market',
         'values' => array(
-            array('x' => 0.20, 'y' => 25, 'size' => 230),            
-            array('x' => 0.40, 'y' => 39, 'size' => 350),            
-            array('x' => 0.70, 'y' => 5,  'size' => 200),            
-            array('x' => 0.90, 'y' => 23, 'size' => 200)
+            array('x' => 20, 'y' => 25, 'size' => 230),            
+            array('x' => 40, 'y' => 39, 'size' => 350),            
+            array('x' => 70, 'y' => 5,  'size' => 200),            
+            array('x' => 90, 'y' => 23, 'size' => 200)
         )
     ),
     array(
         'key' => 'Competitor',
         'values' => array(
-            array('x' => 0.20, 'y' => 20, 'size' => 150),            
-            array('x' => 0.45, 'y' => 45, 'size' => 200),            
-            array('x' => 0.70, 'y' => 70, 'size' => 180),            
-            array('x' => 0.30, 'y' => 30, 'size' => 340)         
+            array('x' => 20, 'y' => 20, 'size' => 150),            
+            array('x' => 45, 'y' => 45, 'size' => 200),            
+            array('x' => 70, 'y' => 70, 'size' => 180),            
+            array('x' => 30, 'y' => 30, 'size' => 340)         
         )
     ),
     array(
-        'key' => 'Your Product',
+        'key' => 'You',
         'values' => array(
-            array('x' => 0.50, 'y' => 30, 'size' => 50, 'label' => 'YourProduct'),
+            array('x' => 50, 'y' => 30, 'size' => 50),
         )
     )
   );
@@ -47,15 +47,16 @@
 <script type="text/javascript">
   nv.addGraph(function() {
     var yourProductColor = "rgba(242,94,34,0.58)";
-    var competitorColor = "rgba(57,198,226,58)";
+    var competitorColor = "rgba(57,198,226,0.58)";
     var marketColor = "rgba(255,255,255,0.75)";
 
     var chart = nv.models.scatterChart()
       .color([marketColor, competitorColor, yourProductColor])
+      .sizeRange([2000, 20000])  
       .transitionDuration(350)
       .margin({bottom: 60})
       .showDistX(true)
-      .showDistY(true)      
+      .showDistY(true)       
       ;
 
     //Configure how the tooltip looks.
@@ -66,8 +67,7 @@
     chart.yAxis
         .tickFormat(d3.format('.02f'))
         .axisLabel("Frequency")
-        ;
-      
+        ;      
 
     chart.xAxis
         .axisLabel("Tranditional Media -> Digital & Social Media")
@@ -75,7 +75,7 @@
         ;   
 
     //We want to show shapes other than circles.
-    chart.scatter.onlyCircles(false);
+    chart.scatter.onlyCircles(true);
 
     d3.select('#marketingChart svg')
         .datum(<?php echo $marketingData; ?>)

@@ -65,7 +65,7 @@
 
     b {
       font-weight: @font-bold;
-      color: @rateValue;
+      color: @productValue;
       text-align: left;            
     }
 
@@ -172,6 +172,12 @@
   .profile-price {
     background: fade(@rateValue,@priceFade);
     font-weight: @font-bold;
+  }
+}
+
+#marketProfiles {
+  .profile-value {
+    background: @productValue;
   }
 }
 

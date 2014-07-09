@@ -14,11 +14,29 @@
   .nv-x line { stroke: none; }
 }
 
+#marketingChart {
+}
+
+#economyChart {
+  .nv-background, 
+  .nv-indexLine,
+  .nv-axis { 
+    display: none; 
+  }
+
+  .nv-line{
+    stroke-width: 5;
+  }
+}
+
 //////////////////////////////////////////////////////
 // Global SVG Styles
 //////////////////////////////////////////////////////
 
 svg {
+  position: relative;
+  z-index: 100;
+
   text {
     font-family: @font-number;
     font-weight: @font-weight;
