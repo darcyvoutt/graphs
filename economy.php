@@ -1,9 +1,7 @@
 <!-- HTML Markup -->
 <h2>Economy</h2>
 
-<label>Rounds: 20</label>
-<button class="page-refresh">Refresh Page</button><br>  
-<button class="chart-refresh">Refresh Data</button><br>  
+<button id="update">Refresh Page</button><br>  
 
 <div id="economyChart">  
   <svg></svg>
@@ -18,29 +16,32 @@
 <!-- JavaScript Chart Setup -->
 <script type="text/javascript">
   nv.addGraph(function() {
-    var chart = nv.models.cumulativeLineChart()
-      .margin({top: 5, right: 10, bottom: 38, left: 5})        
-      .y(function(d) { return d[1]/100 })
-      .x(function(d) { return d[0] })
-      .color(["rgba(255,255,255,0.5)", "rgba(242,94,34,0.58)"])
-      .useInteractiveGuideline(false)
-      .showControls(false)        
+    var chart = nv.models.lineChart()
+      .margin({top: 5, right: 10, bottom: 38, left: 10})        
+      .color(["rgba(255,255,255,0.5)", "rgba(242,94,34,0.58)"])    
+      .useInteractiveGuideline(false)   
+      .transitionDuration(350)   
       .showLegend(true)
-      .tooltips(false)        
+      .showYAxis(false) 
+      .showXAxis(true)  
+      .forceY([0.4,1.6])       
       ;
 
     chart.xAxis
-        .tickFormat(d3.format(',.1'))
+        .tickFormat(d3.format('d'))
         .axisLabel("Rounds")
         ;
 
     chart.yAxis
-        .tickFormat(d3.format(',.1'));
+        .tickFormat(d3.format('0.1f'))
+        ;
+
+    var data = economyData();
 
     d3.select('#economyChart svg')
-        .datum(economyData())
-        .transition().duration(800)
-        .call(chart);
+        .datum(data)
+        .call(chart)
+        ;
 
     nv.utils.windowResize(chart.update);
 
@@ -51,43 +52,47 @@
   function economyData() {  
 
     // Rounds
-    var numRounds = 8;
+    var numRounds = 10;
 
-    // Degrees of difficulty
-    var easy = 0.2;
-    var medium = 0.4;
-    var hard = 0.6;
+    // Stability of economy
+    var stable = 0.2;
+    var unstable = 0.6;
+    var stability = stable;
 
-    // Setups
-    var difficulty = hard;
+    // Type of economy
+    var boom = 0.025;
+    var flat = 0;
+    var poor = -0.025;
+    var economyTrend = poor;
+
+    // Range    
     var start = 1;
+    var max = start + stability;
+    var min = start - stability;
 
-    // Range
-    var max = start + difficulty;
-    var min = start - difficulty;        
-
-    // Last Years
-    var lastYear1 = (Math.random() * 100) / 100;
-
-    // Curve Generation
-    var trend = 0.04 - (difficulty / 10);    
-
-    // Loops
+    // Arrays
     var baseLine = [];
     var economy = [];
-    for (i = 0; i < numRounds + 3; i++) {
 
-      var curve = Math.min(Math.max( lastYear1 + ((Math.random() - 0.5) * difficulty), min), max);        
+    // Loop
+    for (var i = 0; i < numRounds + 1; i++) {    
+      
+      baseLine.push({x: i, y: 1});
 
-      // Flat Line
-      baseLine[i] = new Array(2);
-      baseLine[i][0] = i;
-      baseLine[i][1] = 1;
+      if (i == 0) {
 
-      // Economy Generation
-      economy[i] = new Array(2);
-      economy[i][0] = i;
-      economy[i][1] = Math.round( ((1 + (trend * i)) * curve) * 100) / 100;
+        economyValue = 1;
+      
+      } else {
+      
+        var curve = Math.min(Math.max( start + ((Math.random() - 0.5) * stability), min), max);        
+        
+        economyValue = Math.round( ((1 + (economyTrend * i)) * curve) * 100) / 100;
+
+      }
+
+      economy.push({x: i, y: economyValue});
+      
     }
 
     return [
@@ -97,20 +102,32 @@
       },
       {
         key: 'Economy',
-        values: economy   
+        values: economy  
       }
-    ]
-  
+    ];
   }
 
-  $(document).ready(function() {
-    $('.page-refresh').on('click', function() {
-      chart.update().reload();
-    });
-  });
+  function update() {
+      sel = svg.selectAll(".nv-line")
+      .datum(data);
 
+      sel
+        .exit()
+        .remove();
 
+      sel
+        .enter()
+        .append('path')
+          .attr('class','.nv-line');
+
+      sel
+        .transition().duration(1000);
+
+  };
+
+  d3.select("#update").on("click", data);  
   
+
   // Print the data to Data Dump
   document.getElementById("dataDump").innerHTML = JSON.stringify(economyData());
 </script>
