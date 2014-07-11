@@ -1,7 +1,7 @@
 <!-- HTML Markup -->
 <h2>Economy</h2>
 
-<button id="update">Refresh Page</button><br>  
+<button id="update">Generate Economy</button><br>  
 
 <div>
   <label>Rounds</label>
@@ -37,8 +37,12 @@
 
 <!-- JavaScript Chart Setup -->
 <script type="text/javascript">
+var chart;
+var chartData;
+
+// Start NVD3
   nv.addGraph(function() {
-    var chart = nv.models.lineChart()
+    chart = nv.models.lineChart()
       .margin({top: 5, right: 10, bottom: 38, left: 10})        
       .color(["rgba(255,255,255,0.5)", "rgba(242,94,34,0.58)"])    
       .useInteractiveGuideline(false)   
@@ -60,15 +64,25 @@
 
     var data = economyData();
 
-    d3.select('#economyChart svg')
-        .datum(data)
-        .call(chart)
-        ;
+    chartData = d3.select('#economyChart svg').datum(data);
+    
+    chartData.transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
 
     return chart;
   });
+
+  function update() {
+    var data = economyData();
+
+    // Update the SVG with the new data and call chart
+    chartData.datum(data).transition().duration(500).call(chart);
+    nv.utils.windowResize(chart.update);
+  };
+
+  // Click of the button to update
+  d3.select("#update").on("click", update);
 
   // Data Calc
   function economyData() {  
@@ -128,28 +142,7 @@
         values: economy  
       }
     ];
-  }
-
-  function update() {
-      sel = svg.selectAll(".nv-line")
-      .datum(data);
-
-      sel
-        .exit()
-        .remove();
-
-      sel
-        .enter()
-        .append('path')
-          .attr('class','.nv-line');
-
-      sel
-        .transition().duration(1000);
-
-  };
-
-  d3.select("#update").on("click", data);
-  
+  }  
 
   // Print the data to Data Dump
   document.getElementById("dataDump").innerHTML = JSON.stringify(economyData());
