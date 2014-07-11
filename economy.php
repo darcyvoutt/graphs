@@ -3,6 +3,28 @@
 
 <button id="update">Refresh Page</button><br>  
 
+<div>
+  <label>Rounds</label>
+  <input type="text" id="rounds" value="10" />
+</div>
+
+<div>
+  <label>Trend</label>
+  <select name="trend" id="trend">
+    <option value="0.025">Growth</option>
+    <option value="0" selected>Flat</option>
+    <option value="-0.025">Decline</option>        
+  </select>
+</div>
+
+<div>
+  <label>Stability</label>
+    <select name="stability" id="stability">
+      <option value="0.2">Stable</option>
+      <option value="0.6" selected>Unstable</option>
+    </select>
+</div>
+
 <div id="economyChart">  
   <svg></svg>
 </div>
@@ -21,10 +43,10 @@
       .color(["rgba(255,255,255,0.5)", "rgba(242,94,34,0.58)"])    
       .useInteractiveGuideline(false)   
       .transitionDuration(350)   
+      .forceY([0.4,1.6])
       .showLegend(true)
       .showYAxis(false) 
-      .showXAxis(true)  
-      .forceY([0.4,1.6])       
+      .showXAxis(true)             
       ;
 
     chart.xAxis
@@ -52,18 +74,18 @@
   function economyData() {  
 
     // Rounds
-    var numRounds = 10;
+    var numRounds = parseFloat( $('#rounds').val() );
 
     // Stability of economy
-    var stable = 0.2;
-    var unstable = 0.6;
-    var stability = stable;
+    // var stable = 0.2;
+    // var unstable = 0.6;
+    var stability = parseFloat( $('#stability').find(':selected').val() );
 
-    // Type of economy
-    var boom = 0.025;
-    var flat = 0;
-    var poor = -0.025;
-    var economyTrend = poor;
+    // Trend of economy
+    // var boom = 0.025;
+    // var flat = 0;
+    // var poor = -0.025;
+    var trend = parseFloat( $('#trend').find(':selected').val() );
 
     // Range    
     var start = 1;
@@ -81,18 +103,17 @@
 
       if (i == 0) {
 
-        economyValue = 1;
-      
-      } else {
-      
-        var curve = Math.min(Math.max( start + ((Math.random() - 0.5) * stability), min), max);        
-        
-        economyValue = Math.round( ((1 + (economyTrend * i)) * curve) * 100) / 100;
+        economyValue = 1; 
+
+      } else {      
+
+        var curve = Math.min(Math.max( start + ((Math.random() - 0.5) * stability), min), max);                
+        economyValue = Math.round( ((1 + (trend * i)) * curve) * 100) / 100;
 
       }
 
-      economy.push({x: i, y: economyValue});
-      
+      economy.push({x: i, y: economyValue});    
+
     }
 
     return [
@@ -125,7 +146,7 @@
 
   };
 
-  d3.select("#update").on("click", data);  
+  d3.select("#update").on("click", data);
   
 
   // Print the data to Data Dump
