@@ -79,12 +79,14 @@
     // Stability of economy
     // var stable = 0.2;
     // var unstable = 0.6;
+    // var stability = unstable;
     var stability = parseFloat( $('#stability').find(':selected').val() );
 
     // Trend of economy
     // var boom = 0.025;
     // var flat = 0;
     // var poor = -0.025;
+    // var trend = flat;
     var trend = parseFloat( $('#trend').find(':selected').val() );
 
     // Range    
