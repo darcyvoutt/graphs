@@ -4,27 +4,33 @@
 <button id="update">Generate Economy</button><br>  
 
 <div class="rounds">
-  <label>Rounds</label>
-  <input type="number" id="rounds" value="10" />
+  <div class="formRow">
+    <div class="formRow-label">
+      <label>Rounds</label>
+    </div>
+    <div class="formRow-input">
+      <input type="text" id="rounds" value="10" />
+    </div>
+  </div>  
 </div>
 
 <div class="trend">
   <input type="radio" name="trend" id="growth" value="0.025" checked />
-  <label for="growth">Growth</label>
+  <label class="radio" for="growth">Growth</label>
 
   <input type="radio" name="trend" id="decline" value="-0.025" />
-  <label for="decline">Decline</label>
+  <label class="radio" for="decline">Decline</label>
 
   <input type="radio" name="trend" id="flat" value="0" />
-  <label for="flat">Flat</label>
+  <label class="radio" for="flat">Flat</label>
 </div>
 
 <div class="stability">
   <input type="radio" name="stability" id="stable" value="0.2" checked />
-  <label for="stable">Stable</label>
+  <label class="radio" for="stable">Stable</label>
 
   <input type="radio" name="stability" id="unstable" value="0.6" />
-  <label for="unstable">Unstable</label>
+  <label class="radio" for="unstable">Unstable</label>
 </div>
 
 
