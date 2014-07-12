@@ -2,8 +2,9 @@
 // Variables & Mixins
 //////////////////////////////////////////////////////
 
-@radius:      5px;
-@iconSize:    25px;
+@radius:          8px;
+@iconSize:        25px;
+@highlight:       rgba(242,94,34,0.58);
 
 //////////////////////////////////////////////////////
 // FormRow
@@ -95,12 +96,12 @@ input[type=number] {
   input[type=radio] + label.radio:hover:before,
   input[type=radio]:checked:hover + label.radio:before {
     background-imge: url("../icons/icon-stable.svg");
-    background-color: #FFFFFF;
+    background-color: fade(#ffffff, 70%);
     border-radius: @radius;   
   }
 
   input[type=radio]:checked + label.radio:before {
-    background-color: fade(tomato, 40%);
+    background-color: fade(@highlight, 20%);
     border-radius: @radius;
   }
 

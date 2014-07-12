@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
     <title>icon-growth</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-20.000000, -20.000000)" fill="#4A4A4A">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-20.000000, -20.000000)" fill="#5F5F5F">
             <g id="Standard" sketch:type="MSLayerGroup" transform="translate(20.000000, 20.000000)">
-                <path d="M5,25.9194254 L5,8.9992748 C5,6.78679466 6.79053632,5 8.9992748,5 L31.0007252,5 C33.0815506,5 34.7858445,6.58378296 34.9813062,8.60971022 L5,25.9194254 Z M5.05424526,31.6616096 C5.36865709,33.5558602 7.01229969,35 8.9992748,35 L31.0007252,35 C33.2094637,35 35,33.2132053 35,31.0007252 L35,14.37242 L5.05424526,31.6616096 Z M7.99845994,0 C3.58103249,0 0,3.58493529 0,7.99845994 L0,32.0015401 C0,36.4189675 3.58493529,40 7.99845994,40 L32.0015401,40 C36.4189675,40 40,36.4150647 40,32.0015401 L40,7.99845994 C40,3.58103249 36.4150647,0 32.0015401,0 L7.99845994,0 Z" id="icon-growth" sketch:type="MSShapeGroup"></path>
+                <path d="M3.13386565,16.1945223 C3.12798046,16.0854347 3.125,15.9755737 3.125,15.8650154 L3.125,9.13498456 C3.125,5.81141785 5.81576174,3.125 9.13498456,3.125 L15.8650154,3.125 C18.0018489,3.125 19.875308,4.23726379 20.9407675,5.91370271 L3.13386565,16.1945223 Z M4.14584405,19.2186955 C5.22441401,20.8210455 7.05491568,21.875 9.13498456,21.875 L15.8650154,21.875 C19.1842383,21.875 21.875,19.1885822 21.875,15.8650154 L21.875,9.13498456 C21.875,9.08445387 21.8743774,9.03406884 21.8731394,8.98383673 L4.14584405,19.2186955 Z M7.99609797,0 C3.579975,0 0,3.58189046 0,7.99609797 L0,17.003902 C0,21.420025 3.58189046,25 7.99609797,25 L17.003902,25 C21.420025,25 25,21.4181095 25,17.003902 L25,7.99609797 C25,3.579975 21.4181095,0 17.003902,0 L7.99609797,0 Z" id="icon-growth" sketch:type="MSShapeGroup"></path>
             </g>
         </g>
     </g>
