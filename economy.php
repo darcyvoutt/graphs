@@ -3,27 +3,30 @@
 
 <button id="update">Generate Economy</button><br>  
 
-<div>
+<div class="rounds">
   <label>Rounds</label>
-  <input type="text" id="rounds" value="10" />
+  <input type="number" id="rounds" value="10" />
 </div>
 
-<div>
-  <label>Trend</label>
-  <select name="trend" id="trend">
-    <option value="0.025">Growth</option>
-    <option value="0" selected>Flat</option>
-    <option value="-0.025">Decline</option>        
-  </select>
+<div class="trend">
+  <input type="radio" name="trend" id="growth" value="0.025" checked />
+  <label for="growth">Growth</label>
+
+  <input type="radio" name="trend" id="decline" value="-0.025" />
+  <label for="decline">Decline</label>
+
+  <input type="radio" name="trend" id="flat" value="0" />
+  <label for="flat">Flat</label>
 </div>
 
-<div>
-  <label>Stability</label>
-    <select name="stability" id="stability">
-      <option value="0.2">Stable</option>
-      <option value="0.6" selected>Unstable</option>
-    </select>
+<div class="stability">
+  <input type="radio" name="stability" id="stable" value="0.2" checked />
+  <label for="stable">Stable</label>
+
+  <input type="radio" name="stability" id="unstable" value="0.6" />
+  <label for="unstable">Unstable</label>
 </div>
+
 
 <div id="economyChart">  
   <svg></svg>
@@ -90,18 +93,11 @@ var chartData;
     // Rounds
     var numRounds = parseFloat( $('#rounds').val() );
 
-    // Stability of economy
-    // var stable = 0.2;
-    // var unstable = 0.6;
-    // var stability = unstable;
-    var stability = parseFloat( $('#stability').find(':selected').val() );
-
     // Trend of economy
-    // var boom = 0.025;
-    // var flat = 0;
-    // var poor = -0.025;
-    // var trend = flat;
-    var trend = parseFloat( $('#trend').find(':selected').val() );
+    var trend = parseFloat( $('input:radio[name=trend]:checked').val() );
+
+    // Stability of economy
+    var stability = parseFloat( $('input:radio[name=stability]:checked').val() );
 
     // Range    
     var start = 1;

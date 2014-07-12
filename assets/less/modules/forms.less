@@ -1,0 +1,51 @@
+//////////////////////////////////////////////////////
+// Variables & Mixins
+//////////////////////////////////////////////////////
+
+@radius:      5px;
+@iconSize:    25px;
+
+//////////////////////////////////////////////////////
+// Radio Buttons
+//////////////////////////////////////////////////////
+
+.trend, .stability {    
+  margin-bottom: 10px;
+  display: block;
+  .clearfix();
+
+  input[type=radio] {
+    display: none;
+
+    & + label {      
+      background-position: center center;
+      background-repeat: no-repeat;        
+      background-size: 100%;   
+      text-indent: -9999px;
+      margin-right: 10px; 
+      height: @iconSize;
+      width: @iconSize;
+      cursor: pointer;
+      display: block;
+      float: left;
+      content: "";
+
+      &:hover {
+        background-imge: url("../icons/icon-stable.svg");
+        background-color: #FFFFFF;
+        border-radius: @radius;      
+      }
+    }
+
+    &:checked + label {
+      background-color: fade(tomato, 40%);
+      border-radius: @radius;
+    }
+  }
+
+  #growth + label { background-image: url("../icons/icon-growth.svg"); }
+  #flat + label { background-image: url("../icons/icon-flat.svg"); }
+  #decline + label { background-image: url("../icons/icon-decline.svg"); }
+  #stable + label { background-image: url("../icons/icon-stable.svg"); }
+  #unstable + label { background-image: url("../icons/icon-unstable.svg"); }
+}

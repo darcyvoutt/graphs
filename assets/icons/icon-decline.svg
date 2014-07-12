@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.3 (7891) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-decline</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-1" sketch:type="MSArtboardGroup" transform="translate(-70.000000, -20.000000)" fill="#4A4A4A">
+            <path d="M75.0641667,28.2808887 C75.4022008,26.4125313 77.0354352,25 78.9992748,25 L101.000725,25 C103.213205,25 105,26.7905363 105,28.9992748 L105,45.5643501 L75.0641667,28.2808887 Z M75,34.0173447 L75,51.0007252 C75,53.2094637 76.7867947,55 78.9992748,55 L101.000725,55 C103.098714,55 104.819387,53.3878989 104.986668,51.3301554 L75,34.0173447 Z M77.9984599,20 C73.5810325,20 70,23.5849353 70,27.9984599 L70,52.0015401 C70,56.4189675 73.5849353,60 77.9984599,60 L102.00154,60 C106.418968,60 110,56.4150647 110,52.0015401 L110,27.9984599 C110,23.5810325 106.415065,20 102.00154,20 L77.9984599,20 Z" id="icon-decline" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>
